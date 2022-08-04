@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	mkdir -p $$(pwd)/debian/vice-roms/usr/share/vice
+	cp -r $$(pwd)/data/* $$(pwd)/debian/vice-roms/usr/share/vice
+	mkdir -p $$(pwd)/debian/vice-roms/usr/lib/vice
+	find $$(pwd)/data -mindepth 1 -type d -printf '%f\n' | xargs printf -- "$$(pwd)/debian/vice-roms/usr/lib/vice/%s\n" | xargs mkdir
+	find $$(pwd)/data -mindepth 1 -type f | sed p | sed "s/^.*data\///g" | xargs -n 2 printf -- "$$(pwd)/debian/vice-roms/usr/share/vice/%s $$(pwd)/debian/vice-roms/usr/lib/vice/%s\n" |xargs -n 2 ln -sr
+

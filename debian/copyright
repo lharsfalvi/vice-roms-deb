@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: vice-roms
+Upstream-Contact: none
+Source: https://sourceforge.net/projects/vice-emu/
+
+Files: *
+Copyright: unknown
+License: unknown

@@ -1,0 +1,19 @@
+Source: vice-roms
+Maintainer: John Doe <doe@users.noreply>
+Section: non-free/otherosfs
+Priority: optional
+Standards-Version: VERSION
+Build-Depends: debhelper (>= 9)
+Homepage: https://gitlab.com/dornick/vice-roms-deb
+
+Package: vice-roms
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Versatile Commodore Emulator ROMs
+ Completely unofficial Commodore ROMs package for VICE.
+ Disclaimer: although the ROM files in this package all
+ come from VICE's developer repository, neither VICE's
+ developers, nor the Debian VICE package's maintainers,
+ are affiliated with producing this unofficial ROM package
+ in any way.
+ This package is intended for personal use.
