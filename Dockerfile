@@ -1,8 +1,7 @@
-#FROM ubuntu:18.04
-#FROM ubuntu:20.04
+#FROM ubuntu:22.04
 FROM debian:11
 
-ENV LANG C.UTF-8
+ENV LANG=C.UTF-8
 
 RUN	   set -ex \
 	&& sed -i '/.*debian.*main/ s/$/ contrib/' /etc/apt/sources.list \
